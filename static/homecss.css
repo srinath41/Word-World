@@ -1,0 +1,278 @@
+/* homecss.css */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&family=Playfair+Display:wght@700&display=swap');
+
+/* Custom Body Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f8; /* Soft off-white background */
+    display: flex; /* Use flexbox to align items */
+    height: 100vh; /* Full height of the viewport */
+    margin: 0; /* Remove default margin */
+}
+
+/* Flex container to align both recent searches and the main container */
+.flex-container {
+    display: flex; /* Use flexbox layout */
+    justify-content: flex-start; /* Align to the left */
+    width: 100%; /* Full width */
+}
+
+/* Adjusted the container to be centered */
+#recentSearchesContainer {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly less transparent for clarity */
+    padding: 10px; /* Increased padding */
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Softer shadow for depth */
+    width: 200px; /* Fixed width for the recent searches container */
+    margin-right: 20px; /* Space between recent searches and main container */
+}
+
+/* Centering the main container */
+.container {
+    max-width: 900px; /* Increased max width of the container */
+    margin: auto; /* Centering the container */
+    padding: 40px; /* Increased padding around the container */
+    border-radius: 20px; /* Slightly rounded corners for container */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Softer shadow for depth */
+    text-align: center; /* Center text inside the container */
+}
+
+/* Remaining CSS styles remain unchanged */
+
+/* Existing CSS */
+#recentSearches {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.recent-search-button {
+    display: block; /* Stack buttons vertically */
+    background-color: #4A90E2; /* Blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 15px; /* Increased padding for buttons */
+    margin: 10px 0; /* Space between buttons */
+    border-radius: 10px; /* More rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.4s, transform 0.2s; /* Smooth transition for hover effect */
+    font-size: 1.1rem; /* Adjusted font size */
+}
+
+#clearHistoryButton {
+    background-color: #dc3545; /* Red background */
+}
+
+#clearHistoryButton:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+.recent-search-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.02); /* Slightly increase size on hover */
+}
+
+.history-item {
+    padding: 10px; /* Increased padding */
+    background-color: #f9f9f9; /* Light grey background */
+    border: 1px solid #ddd; /* Light border */
+    margin-bottom: 10px; /* Space between items */
+    border-radius: 10px; /* Rounded corners */
+    transition: transform 0.3s; /* Transition for scaling */
+}
+
+.history-item:hover {
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+/* Dark Mode Styles */
+/* Positioning the Toggle Button */
+.toggle-wrapper {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.toggle-switch {
+    display: none;
+}
+
+.toggle-label {
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 34px;
+    background: linear-gradient(145deg, #ffffff, #fafafa); /* Luxurious gold gradient */
+    border-radius: 34px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.4s ease;
+}
+
+.toggle-label::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(145deg, #c0c0c0, #ffffff); /* Silver to white gradient */
+    border-radius: 50%;
+    transition: transform 0.4s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch:checked + .toggle-label {
+    background: linear-gradient(145deg, #ffffff, #000000); /* Vibrant gradient when active */
+}
+
+.toggle-switch:checked + .toggle-label::after {
+    transform: translateX(26px);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .h1 {
+    background-color: #333333;
+    color: white;
+}
+
+body.dark-mode .container {
+    background-color: #333333;
+    color: white;
+}
+
+body.dark-mode #recentSearchesContainer {
+    background-color: #333333;
+    color: white;
+}
+
+body.dark-mode input[type="text"] {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+body.dark-mode input[type="text"]:focus {
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.781);
+}
+
+body.dark-mode button {
+    background-color: #888;
+    color: #fff;
+}
+
+body.dark-mode h2 {
+    color: #fff;
+}
+
+body.dark-mode button:hover {
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.781);
+    background-color: #555;
+}
+
+/* Add keyframes for fade-in and scale-up effect */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;            /* Start with invisible */
+        transform: scale(0.8); /* Start with smaller size */
+    }
+    100% {
+        opacity: 1;            /* End with full opacity */
+        transform: scale(1);   /* End with normal size */
+    }
+}
+
+/* Apply animation to h1 */
+h1 {
+    font-family: 'Playfair Display', serif; /* Use Playfair for a premium feel */
+    color: #333333;
+    margin-bottom: 30px;
+    font-size: 2.8rem; /* Increased font size */
+    animation: fadeInScale 1s ease-in-out; /* Duration of 1 second with ease-in-out timing */
+}
+
+/* Input Field Styles with Glassy Effect */
+input[type="text"] {
+    padding: 15px; /* Adjusted padding inside the input */
+    border-radius: 10px; /* Rounded corners */
+    border: none; /* No border */
+    background: rgba(255, 255, 255, 0.6); /* White with transparency */
+    backdrop-filter: blur(15px); /* Blur effect for glassy look */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition for border color and shadow */
+    font-size: 1.25rem; /* Increased font size */
+    width: 90%; /* Full width of the input */
+}
+
+input[type="text"]:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 10px 0px 20px rgba(74, 144, 226, 0.5); /* Shadow on focus */
+}
+
+/* Button Styles */
+button {
+    background-color: #4A90E2; /* Blue background */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px 30px; /* Increased padding inside the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.4s ease, transform 0.2s ease; /* Transition for background color and transform */
+    font-size: 1.2rem; /* Increased font size for button */
+    margin-top: 20px; /* Increased space above button */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+.placeholder {
+    color: #aaa; /* Light gray color for placeholder effect */
+    font-style: italic; /* Italic style for placeholder effect */
+    transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+.result {
+    color: #333; /* Dark gray for actual results */
+    margin-top: 10px; /* Space above result */
+}
+
+h2 {
+    color: #333333; /* Highlight color for h2 */
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat for emphasis */
+    font-weight: 600; /* Bold weight for h2 */
+    margin-bottom: 15px; /* Space below h2 */
+}
+
+/* Search Result Styles with Glassy Effect */
+#searchResult {
+    margin-top: 30px; /* Increased space above search results */
+    padding: 20px; /* Increased padding inside results */
+    background: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Blur effect for glassy look */
+    border-radius: 8px; /* Rounded corners for results */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: all 0.3s ease; /* Transition for all properties */
+    font-size: 1.25rem; /* Increased font size for results */
+}
+
+/* Animation for Results */
+#searchResult.fade-in {
+    opacity: 0;
+    transform: translateY(20px); /* Start from below */
+    animation: fadeIn 0.5s forwards; /* Animation for fading in */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* End state opacity */
+        transform: translateY(0); /* End state position */
+    }
+}
